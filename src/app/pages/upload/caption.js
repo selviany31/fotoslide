@@ -28,6 +28,11 @@ const CaptionForm = ({ close }) => {
           <label className='font-semibold'>Name (Optional)</label>
           <input type='text' className='border-2 rounded-lg py-3' />
         </div>
+        <div className='text-center pt-4'>
+          <button className='text-[#0BB90B] border border-[#0BB90B] rounded-lg text-lg font-semibold py-3 px-6'>
+            Save Caption
+          </button>
+        </div>
       </div>
     </div>
   );
