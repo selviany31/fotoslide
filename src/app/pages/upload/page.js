@@ -53,7 +53,11 @@ const UploadPage = () => {
       </div>
       <div className='bg-[#F8FAFD] p-4 h-screen pt-[150px] overflow-y-hidden'>
         {isPreview && imageURLS?.length ? (
-          <PreviewImage imageURLS={imageURLS} setImageURLS={setImageURLS} />
+          <PreviewImage
+            imageURLS={imageURLS}
+            setImageURLS={setImageURLS}
+            handleUpload={uploadImageToClient}
+          />
         ) : (
           <div className='flex flex-col justify-center items-center '>
             <UploadForm handleUpload={uploadImageToClient} />

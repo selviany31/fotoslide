@@ -3,7 +3,7 @@ import Image from 'next/image';
 import CaptionForm from './caption';
 import { useState } from 'react';
 
-const PreviewImage = ({ imageURLS, setImageURLS }) => {
+const PreviewImage = ({ imageURLS, setImageURLS, handleUpload }) => {
   const [show, setShow] = useState(false);
 
   const handleRemove = (val) => {
@@ -60,14 +60,24 @@ const PreviewImage = ({ imageURLS, setImageURLS }) => {
           </div>
         ))}
         <div className='absolute right-4 bottom-[130px]'>
-          <button className='w-[80px] h-[80px] bg-[#fff] rounded-full border shadow-xl flex justify-center items-center'>
+          <input
+            id='image-upload'
+            type='file'
+            hidden
+            onChange={handleUpload}
+            multiple
+          />
+          <label
+            htmlFor='image-upload'
+            className='w-[80px] h-[80px] bg-[#fff] rounded-full border shadow-xl flex justify-center items-center'
+          >
             <Image
               src='/icons/plus-green.svg'
               alt='Next.js logo'
               width={32}
               height={32}
             />
-          </button>
+          </label>
         </div>
       </div>
       <div className='absolute border-t-2 bg-[#fff] w-full left-0 bottom-0 py-6 px-4'>
